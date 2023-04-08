@@ -13,6 +13,7 @@ class ScienceArtSpace extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       home: TestPage(),//HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
