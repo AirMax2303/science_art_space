@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'statude.dart';
 import 'form_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,8 +26,10 @@ class HomePage extends StatelessWidget {
     }
 
     return Scaffold(
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: [
+          const HtmlWidget(html),
           TextB(
               'Организаторы ФГБОУ ВО «Кубанский государственный университет»:'),
           TextS('Кафедра ДПИ и дизайна художественно-графического факультета;'),
@@ -65,6 +68,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
       ),
     );
   }
