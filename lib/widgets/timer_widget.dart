@@ -29,77 +29,89 @@ class _TimerWidgetState extends State<TimerWidget> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     final countingDown =
-    TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
+        TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
     final timeTextStyle = TextStyle(
         fontSize: mediaQuery.size.width / 55, color: AppPallete.black4);
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        Column(
+        SizedBox(height: mediaQuery.size.width / 15),
+        Text(
+          'До окончания регистрации:',
+          style: headTextStyle,
+        ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            Column(
+              children: [
+                Text(
 //                                '30 : ',
-              '${DateTime(2023, 5, 3).difference(DateTime.now()).inDays} : ',
-              style: countingDown,
+                  '${DateTime(2023, 5, 3).difference(DateTime.now()).inDays} : ',
+                  style: countingDown,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'дней',
+                  style: timeTextStyle,
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              'дней',
-              style: timeTextStyle,
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Text(
+            Column(
+              children: [
+                Text(
 //                                '8 : ',
-              '${23 - DateTime.now().hour} : ',
-              style: countingDown,
+                  '${23 - DateTime.now().hour} : ',
+                  style: countingDown,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'часов ',
+                  style: timeTextStyle,
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              'часов ',
-              style: timeTextStyle,
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Text(
+            Column(
+              children: [
+                Text(
 //                                '44 : ',
-              '${59 - DateTime.now().minute} : ',
-              style: countingDown,
+                  '${59 - DateTime.now().minute} : ',
+                  style: countingDown,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'минут',
+                  style: timeTextStyle,
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              'минут',
-              style: timeTextStyle,
-            ),
-          ],
-        ),
-        Column(
-          children: [
-            Text(
+            Column(
+              children: [
+                Text(
 //                                '18',
-              (59 - DateTime.now().second).toString(),
-              style: countingDown,
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              'секунд',
-              style: timeTextStyle,
+                  (59 - DateTime.now().second).toString(),
+                  style: countingDown,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                Text(
+                  'секунд',
+                  style: timeTextStyle,
+                ),
+              ],
             ),
           ],
         ),
+        SizedBox(height: mediaQuery.size.width / 15),
       ],
     );
   }

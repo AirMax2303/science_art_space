@@ -16,7 +16,7 @@ class _TestPageState extends State<TestPage> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    final simpleText = TextStyle(fontSize: mediaQuery.size.width / 60);
+    //final simpleText = TextStyle(fontSize: mediaQuery.size.width / 60);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(

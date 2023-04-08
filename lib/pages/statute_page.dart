@@ -1,15 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:science_art_space/pages/statude.dart';
+import 'package:science_art_space/widgets/header_widget.dart';
 
-class StatutePage extends StatefulWidget {
+class StatutePage extends StatelessWidget {
   const StatutePage({Key? key}) : super(key: key);
 
   @override
-  State<StatutePage> createState() => _StatutePageState();
-}
-
-class _StatutePageState extends State<StatutePage> {
-  @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    final mediaQuery = MediaQuery.of(context);
+    final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: mediaQuery.size.width / 40),
+            const HeaderWidget(),
+            Padding(
+              padding: EdgeInsets.all(mediaQuery.size.width / 15),
+              child: const HtmlWidget(
+                  html), //textStyle: TextStyle(fontSize: mediaQuery.size.width / 60),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }

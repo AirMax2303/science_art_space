@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/app_pallete.dart';
+import '../pages/experts_page.dart';
 import '../pages/home_page.dart';
-
+import '../pages/organizers_page.dart';
+import '../pages/partners_page.dart';
+import '../pages/statute_page.dart';
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({Key? key}) : super(key: key);
@@ -15,10 +18,6 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
-    final countingDown =
-    TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
-    final timeTextStyle = TextStyle(
-        fontSize: mediaQuery.size.width / 50, color: AppPallete.black4);
     return Wrap(
       alignment: WrapAlignment.center,
       //mainAxisAlignment: MainAxisAlignment.center,
@@ -43,10 +42,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         const SizedBox(width: 10),
         InkWell(
           onTap: () {
-            //Navigator.push(
-            //  context,
-            //  MaterialPageRoute(builder: (context) => const StatutePage()),
-            //);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const StatutePage()),
+            );
           },
           child: Text(
             'ПОЛОЖЕНИЕ',
@@ -61,10 +60,10 @@ class _HeaderWidgetState extends State<HeaderWidget> {
         const SizedBox(width: 10),
         InkWell(
           onTap: () {
-            //Navigator.push(
-            //  context,
-            //  MaterialPageRoute(builder: (context) => const OrganizersPage()),
-            //);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OrganizersPage()),
+            );
           },
           child: Text(
             'ОРГАНИЗАТОРЫ',
@@ -77,9 +76,17 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           style: headTextStyle,
         ),
         const SizedBox(width: 10),
-        Text(
-          'ЭКСПЕРТЫ',
-          style: headTextStyle,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ExpertsPage()),
+            );
+          },
+          child: Text(
+            'ЭКСПЕРТЫ',
+            style: headTextStyle,
+          ),
         ),
         const SizedBox(width: 10),
         Text(
@@ -87,9 +94,17 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           style: headTextStyle,
         ),
         const SizedBox(width: 10),
-        Text(
-          'ПАРТНЁРЫ',
-          style: headTextStyle,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const PartnersPage()),
+            );
+          },
+          child: Text(
+            'ПАРТНЁРЫ',
+            style: headTextStyle,
+          ),
         ),
       ],
     );
