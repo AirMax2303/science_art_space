@@ -3,7 +3,7 @@ const String html = """
     <div style="clear:both;">
         <p style="margin-top:0pt; margin-bottom:0pt; text-align:center;">&nbsp;</p>
     </div>
-    <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:14pt;"><strong>ПОЛОЖЕНИЕ *** МЕЖДУНАРОДНОЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ</strong><strong>&nbsp;&nbsp;</strong><strong>ВЫСТАВКИ-КОНКУРСА</strong><strong>&nbsp;&nbsp;</strong></p>
+    <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:14pt;"><strong>ПОЛОЖЕНИЕ III МЕЖДУНАРОДНОЙ НАУЧНО-ИССЛЕДОВАТЕЛЬСКОЙ</strong><strong>&nbsp;&nbsp;</strong><strong>ВЫСТАВКИ-КОНКУРСА</strong><strong>&nbsp;&nbsp;</strong></p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:center; font-size:14pt;"><strong>ИСКУССТВО И НАУКА: КОСМОС</strong></p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; font-size:14pt;"><strong>&nbsp;</strong></p>
     <p style="margin-top:0pt; margin-bottom:0pt; text-align:justify;"><strong>Организаторы&nbsp;</strong>ФГБОУ&nbsp; ВО &laquo;Кубанский государственный университет&raquo;:</p>
