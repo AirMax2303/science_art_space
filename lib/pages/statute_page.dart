@@ -17,8 +17,9 @@ class StatutePage extends StatelessWidget {
             SizedBox(height: mediaQuery.size.width / 40),
             const HeaderWidget(),
             Padding(
-              padding: EdgeInsets.all(mediaQuery.size.width / 40),
-              child: const HtmlWidget(html),
+              padding: EdgeInsets.all(mediaQuery.size.width / 15),
+              child: const HtmlWidget(
+                  html), //textStyle: TextStyle(fontSize: mediaQuery.size.width / 60),
             )
           ],
         ),
