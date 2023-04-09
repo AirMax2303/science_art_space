@@ -12,7 +12,8 @@ class ScienceArtSpace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: TestPage(),//HomePage(),
+      home: HomePage(),
+      //home: TestPage(),
       debugShowCheckedModeBanner: false,
     );
   }

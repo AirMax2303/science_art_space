@@ -4,8 +4,9 @@ import '../app/theme/app_pallete.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/timer_widget.dart';
 import 'package:video_player/video_player.dart';
+import 'form/views/age_view.dart';
 import 'statude.dart';
-import 'form_page.dart';
+import 'form/form_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -105,8 +106,7 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => const FormPage()),
+                          MaterialPageRoute(builder: (context) => AgeView()),
                         );
                       },
                       child: Container(
