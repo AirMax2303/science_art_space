@@ -31,7 +31,7 @@ class _TimerWidgetState extends State<TimerWidget> {
     final mediaQuery = MediaQuery.of(context);
     final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     final countingDown =
-        TextStyle(fontSize: mediaQuery.size.width / 30, color: AppPallete.blue);
+        TextStyle(fontSize: mediaQuery.size.width / 20, color: AppPallete.blue);
     final timeTextStyle = TextStyle(
         fontSize: mediaQuery.size.width / 55, color: AppPallete.black4);
     return Column(
@@ -46,9 +46,9 @@ class _TimerWidgetState extends State<TimerWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-//                                '30 : ',
                   '${DateTime(2023, 5, 3).difference(DateTime.now()).inDays} : ',
                   style: countingDown,
                 ),
@@ -64,7 +64,6 @@ class _TimerWidgetState extends State<TimerWidget> {
             Column(
               children: [
                 Text(
-//                                '8 : ',
                   '${23 - DateTime.now().hour} : ',
                   style: countingDown,
                 ),
@@ -72,7 +71,7 @@ class _TimerWidgetState extends State<TimerWidget> {
                   height: 5,
                 ),
                 Text(
-                  'часов ',
+                  'часов      ',
                   style: timeTextStyle,
                 ),
               ],
@@ -80,7 +79,6 @@ class _TimerWidgetState extends State<TimerWidget> {
             Column(
               children: [
                 Text(
-//                                '44 : ',
                   '${59 - DateTime.now().minute} : ',
                   style: countingDown,
                 ),
@@ -88,7 +86,7 @@ class _TimerWidgetState extends State<TimerWidget> {
                   height: 5,
                 ),
                 Text(
-                  'минут',
+                  'минут    ',
                   style: timeTextStyle,
                 ),
               ],
@@ -96,7 +94,6 @@ class _TimerWidgetState extends State<TimerWidget> {
             Column(
               children: [
                 Text(
-//                                '18',
                   (59 - DateTime.now().second).toString(),
                   style: countingDown,
                 ),
@@ -104,7 +101,7 @@ class _TimerWidgetState extends State<TimerWidget> {
                   height: 5,
                 ),
                 Text(
-                  'секунд',
+                  'сек',
                   style: timeTextStyle,
                 ),
               ],

@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/space2.mp4');
+    _controller = VideoPlayerController.asset('assets/space3.mp4');
 
     _controller.addListener(() {
       setState(() {});
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                     //Text('${constraints.maxHeight} | ${constraints.maxWidth}'),
                     Center(
                       child: SizedBox(
-                          height: constraints.maxWidth / 1.78,
+                          height: constraints.maxWidth / 2.087,
                           width: constraints.maxWidth,
                           child: VideoPlayer(_controller)),
                     ),
@@ -71,35 +71,61 @@ class _HomePageState extends State<HomePage> {
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            color: AppPallete.black10,
-                            height: MediaQuery.of(context).size.width / 300,
-                            width: MediaQuery.of(context).size.width / 3.4,
-                          ),
-                          const SizedBox(width: 30),
-                          Text(
-                            'СИНТЕЗ  НАУКИ И ИСКУССТВА',
-                            style: headTextStyle,
-                          ),
-                          const SizedBox(width: 30),
-                          Container(
-                            color: AppPallete.black10,
-                            height: MediaQuery.of(context).size.width / 300,
-                            width: MediaQuery.of(context).size.width,
-                          ),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          color: AppPallete.black10,
+                          height: MediaQuery.of(context).size.width / 300,
+                          width: MediaQuery.of(context).size.width / 5,
+                        ),
+                        const SizedBox(width: 30),
+                        Text(
+                          'СИНТЕЗ  НАУКИ И ИСКУССТВА',
+                          style: headTextStyle,
+                        ),
+                        const SizedBox(width: 30),
+                        Container(
+                          color: AppPallete.black10,
+                          height: MediaQuery.of(context).size.width / 300,
+                          width: MediaQuery.of(context).size.width / 5,
+                        ),
+                      ],
                     ),
+                    //SingleChildScrollView(
+                    //  scrollDirection: Axis.horizontal,
+                    //  child: Row(
+                    //    mainAxisAlignment: MainAxisAlignment.center,
+                    //    children: [
+                    //      Container(
+                    //        color: AppPallete.black10,
+                    //        height: MediaQuery.of(context).size.width / 300,
+                    //        width: MediaQuery.of(context).size.width / 3.4,
+                    //      ),
+                    //      const SizedBox(width: 30),
+                    //      Text(
+                    //        'СИНТЕЗ  НАУКИ И ИСКУССТВА',
+                    //        style: headTextStyle,
+                    //      ),
+                    //      const SizedBox(width: 30),
+                    //      Container(
+                    //        color: AppPallete.black10,
+                    //        height: MediaQuery.of(context).size.width / 300,
+                    //        width: MediaQuery.of(context).size.width,
+                    //      ),
+                    //    ],
+                    //  ),
+                    //),
                     const TimerWidget(),
-                    Divider(
-                      thickness: MediaQuery.of(context).size.width / 300,
-                      height: MediaQuery.of(context).size.width / 300,
-                      color: Colors.black87,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 11.5,
+                          right: MediaQuery.of(context).size.width / 11.5),
+                      child: Divider(
+                        thickness: MediaQuery.of(context).size.width / 300,
+                        height: MediaQuery.of(context).size.width / 300,
+                        color: Colors.black87,
+                      ),
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
                     InkWell(
@@ -128,31 +154,41 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
-                    Divider(
-                      thickness: MediaQuery.of(context).size.width / 300,
-                      height: MediaQuery.of(context).size.width / 300,
-                      color: Colors.black87,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 11.5,
+                          right: MediaQuery.of(context).size.width / 11.5),
+                      child: Divider(
+                        thickness: MediaQuery.of(context).size.width / 300,
+                        height: MediaQuery.of(context).size.width / 300,
+                        color: Colors.black87,
+                      ),
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: mediaQuery.size.width / 2,
+                          height: mediaQuery.size.width / 1.8,
                           child: Image.asset('assets/programs/afiha.jpg'),
                         ),
                         SizedBox(width: mediaQuery.size.width / 30),
                         SizedBox(
-                          height: mediaQuery.size.width / 2,
+                          height: mediaQuery.size.width / 1.8,
                           child: Image.asset('assets/programs/prg.jpg'),
                         ),
                       ],
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
-                    Divider(
-                      thickness: MediaQuery.of(context).size.width / 300,
-                      height: MediaQuery.of(context).size.width / 300,
-                      color: Colors.black87,
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: MediaQuery.of(context).size.width / 11.5,
+                          right: MediaQuery.of(context).size.width / 11.5),
+                      child: Divider(
+                        thickness: MediaQuery.of(context).size.width / 300,
+                        height: MediaQuery.of(context).size.width / 300,
+                        color: Colors.black87,
+                      ),
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
                     Text('Участники', style: headTextStyle),
