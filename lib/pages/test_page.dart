@@ -10,6 +10,7 @@ import '../model/candidate_model.dart';
 import '../repo/repositories.dart';
 import 'experts_page.dart';
 import 'organizers_page.dart';
+import 'package:file_picker/file_picker.dart';
 
 class TestPage extends StatefulWidget {
   const TestPage({Key? key}) : super(key: key);
@@ -37,39 +38,59 @@ class _TestPageState extends State<TestPage> {
         fontSize: mediaQuery.size.width / 30, color: AppPallete.black8);
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Card(
-        color: AppPallete.black2,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              candidate.name.toString(),
-              style: timeTextStyle,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              candidate.surname.toString(),
-              style: timeTextStyle,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              candidate.patronymic.toString(),
-              style: timeTextStyle,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            Text(
-              candidate.ageCategory.toString(),
-              style: timeTextStyle,
-            ),
-          ],
+      child: InkWell(
+        onTap: () async {
+          final FilePickerResult? result = await FilePicker.platform.pickFiles();
+        },
+        child: Card(
+          color: AppPallete.black2,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    candidate.name.toString(),
+                    style: timeTextStyle,
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Text(
+                    candidate.surname.toString(),
+                    style: timeTextStyle,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                candidate.section.toString(),
+                style: timeTextStyle,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                candidate.ageCategory.toString(),
+                style: timeTextStyle,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                candidate.insertDate.toString(),
+                style: timeTextStyle,
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -90,40 +111,8 @@ class _TestPageState extends State<TestPage> {
                     maxCrossAxisExtent: mediaQuery.size.width / 2,
                     mainAxisExtent: mediaQuery.size.width / 3,
                   ),
-                  //gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  //  crossAxisCount: 2,
-                  //),
                   itemBuilder: (context, index) {
                     return CandidateCard(snapshot.data![index]);
-                    //return Card(
-                    //  child: Column(
-                    //    children: [
-                    //      Row(
-                    //        children: [
-                    //          Text('${snapshot.data?[index].ageCategory}'),
-                    //          const SizedBox(
-                    //            width: 10,
-                    //          ),
-                    //          Text('${snapshot.data?[index].section}'),
-                    //        ],
-                    //      ),
-                    //      Row(
-                    //        children: [
-                    //          Text('${snapshot.data?[index].name}'),
-                    //          const SizedBox(
-                    //            width: 10,
-                    //          ),
-                    //          Text('${snapshot.data?[index].surname}'),
-                    //        ],
-                    //      ),
-                    //      Row(
-                    //        children: [
-                    //          Text('${snapshot.data?[index].insertDate}'),
-                    //        ],
-                    //      ),
-                    //    ],
-                    //  ),
-                    //);
                   },
                   itemCount: snapshot.data?.length,
                 ),

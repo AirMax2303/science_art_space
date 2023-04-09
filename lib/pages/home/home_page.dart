@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:science_art_space/pages/home/widgets/candidates_list.dart';
 import 'package:science_art_space/pages/test_page.dart';
 import '../../app/theme/app_pallete.dart';
 import '../../widgets/header_widget.dart';
 import 'widgets/timer_widget.dart';
 import 'package:video_player/video_player.dart';
 import '../form/views/age_view.dart';
-import '../statude.dart';
-import '../form/form_page.dart';
+import 'package:file_picker/file_picker.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,24 +15,24 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late VideoPlayerController _controller;
+ // late VideoPlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.asset('assets/space3.mp4');
-
-    _controller.addListener(() {
-      setState(() {});
-    });
-    _controller.setLooping(true);
-    _controller.initialize().then((_) => setState(() {}));
-    _controller.play();
+    //_controller = VideoPlayerController.asset('assets/space3.mp4');
+//
+    //_controller.addListener(() {
+    //  setState(() {});
+    //});
+    //_controller.setLooping(true);
+    //_controller.initialize().then((_) => setState(() {}));
+    //_controller.play();
   }
 
   @override
   void dispose() {
-    _controller.dispose();
+ //   _controller.dispose();
     super.dispose();
   }
 
@@ -54,14 +51,18 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     //Container(height: 900,width: MediaQuery.of(context).size.width, child: VideoPlayer(_controller)),
                     //Text('${constraints.maxHeight} | ${constraints.maxWidth}'),
-                    Center(
-                      child: SizedBox(
-                          height: constraints.maxWidth / 2.087,
-                          width: constraints.maxWidth,
-                          child: VideoPlayer(_controller)),
-                    ),
+                    //Center(
+                    //  child: SizedBox(
+                    //      height: constraints.maxWidth / 2.087,
+                    //      width: constraints.maxWidth,
+                    //      child: VideoPlayer(_controller)),
+                    //),
                     //const SizedBox(height: 10),
                     //Text('${constraints.maxHeight} | ${constraints.maxWidth}'),
+                    TextButton(onPressed: () async {
+                      final FilePickerResult? result = await FilePicker.platform.pickFiles();
+                    },
+                        child: const Text('File')),
                     SizedBox(height: mediaQuery.size.width / 25),
                     const HeaderWidget(),
                     SizedBox(height: mediaQuery.size.width / 15),
