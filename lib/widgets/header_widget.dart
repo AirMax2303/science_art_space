@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../app/theme/app_pallete.dart';
 import '../pages/experts_page.dart';
-import '../pages/home_page.dart';
+import '../pages/home/home_page.dart';
 import '../pages/organizers_page.dart';
 import '../pages/partners_page.dart';
 import '../pages/statute_page.dart';

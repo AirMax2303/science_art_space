@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:science_art_space/pages/home/widgets/candidates_list.dart';
 import 'package:science_art_space/pages/test_page.dart';
-import '../app/theme/app_pallete.dart';
-import '../widgets/header_widget.dart';
-import '../widgets/timer_widget.dart';
+import '../../app/theme/app_pallete.dart';
+import '../../widgets/header_widget.dart';
+import 'widgets/timer_widget.dart';
 import 'package:video_player/video_player.dart';
-import 'form/views/age_view.dart';
-import 'statude.dart';
-import 'form/form_page.dart';
+import '../form/views/age_view.dart';
+import '../statude.dart';
+import '../form/form_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -198,7 +199,7 @@ class _HomePageState extends State<HomePage> {
                     //Image.asset('assets/img.png'),
                     //Image(image: AssetImage('assets/img.png'));
                     //Image.asset('assets/experts/belpay.jpg'),
-
+                    //CandidatesList(),
                     SizedBox(height: mediaQuery.size.width / 15),
                     Text(
                       'Подробно по выставке: Морозкина Елена Анатольевна',

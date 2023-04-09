@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:science_art_space/pages/home_page.dart';
+import 'package:science_art_space/pages/home/home_page.dart';
 import 'package:science_art_space/pages/test_page.dart';
 
 void main() {

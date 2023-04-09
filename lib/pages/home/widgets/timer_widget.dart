@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../app/theme/app_pallete.dart';
+import '../../../app/theme/app_pallete.dart';
 
 class TimerWidget extends StatefulWidget {
   const TimerWidget({Key? key}) : super(key: key);
