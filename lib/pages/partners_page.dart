@@ -16,7 +16,7 @@ class PartnersPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 7,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage(data.photo!), fit: BoxFit.cover),
+                  image: AssetImage(data.photo!), fit: BoxFit.fill),
             ),
           ),
 //          CircleAvatar(
