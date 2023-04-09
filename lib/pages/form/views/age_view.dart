@@ -28,6 +28,7 @@ class AgeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final headTextStyle = TextStyle(fontSize: mediaQuery.size.width / 40);
     return Scaffold(
       body: Column(
         children: [
@@ -57,11 +58,27 @@ class AgeView extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //Divider(
-              //  thickness: MediaQuery.of(context).size.width / 300,
-              //  height: MediaQuery.of(context).size.width / 300,
-              //  color: Colors.black87,
-              //),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    color: AppPallete.black10,
+                    height: MediaQuery.of(context).size.width / 300,
+                    width: MediaQuery.of(context).size.width / 5.5,
+                  ),
+                  const SizedBox(width: 30),
+                  Text(
+                    'ВОЗРАСТНЫЕ КАТЕГОРИИ УЧАСТНИКОВ',
+                    style: headTextStyle,
+                  ),
+                  const SizedBox(width: 30),
+                  Container(
+                    color: AppPallete.black10,
+                    height: MediaQuery.of(context).size.width / 300,
+                    width: MediaQuery.of(context).size.width / 5.5,
+                  ),
+                ],
+              ),
               SizedBox(height: mediaQuery.size.width / 15),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -98,10 +115,15 @@ class AgeView extends StatelessWidget {
                 ],
               ),
               SizedBox(height: mediaQuery.size.width / 15),
-              Divider(
-                thickness: MediaQuery.of(context).size.width / 300,
-                height: MediaQuery.of(context).size.width / 300,
-                color: Colors.black87,
+              Padding(
+                padding: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width / 20,
+                    right: MediaQuery.of(context).size.width / 20),
+                child: Divider(
+                  thickness: MediaQuery.of(context).size.width / 300,
+                  height: MediaQuery.of(context).size.width / 300,
+                  color: Colors.black87,
+                ),
               ),
             ],
           ),
