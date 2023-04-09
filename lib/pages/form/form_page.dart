@@ -4,10 +4,13 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import '../../app/theme/app_pallete.dart';
 import '../../model/candidate_model.dart';
 import '../../model/models.dart';
+import '/repo/repositories.dart';
+import '/pages/dialog.dart';
 
 class FormPage extends StatelessWidget {
   FormPage({Key? key, required this.candidate}) : super(key: key);
   Candidate candidate;
+  CandidateRepository candidateRepository = CandidateRepository();
 
   final _formKey = GlobalKey<FormBuilderState>();
 
@@ -150,7 +153,19 @@ class FormPage extends StatelessWidget {
                     ),
                     SizedBox(height: mediaQuery.size.width / 15),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        try {
+                          candidate.insertDate = DateTime.now().toString();
+                          print('---------------- DateTime.now --------------------');
+                          print(candidate.insertDate);
+                          candidateRepository.add(candidate);
+                          dialog(context, '', 'Заявка отправлена' , 'Ok');
+                        } catch(e) {
+                          print('---------------- Error candidateRepository.add(candidate) --------------------');
+                          print(e);
+                          dialog(context, 'Ошибка', 'Не удалось подать заявку' , 'Ok');
+                        }
+                      },
                       child: Container(
                         height: mediaQuery.size.width / 15,
                         width: mediaQuery.size.width / 4,
