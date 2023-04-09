@@ -51,21 +51,21 @@ class FormPage extends StatelessWidget {
                 child: Column(
                   children: [
                     FormBuilderTextField(
-                      name: 'name',
-                      decoration: const InputDecoration(
-                        labelText: 'Имя',
-                      ),
-                      onChanged: (value) {
-                        candidate.name = value;
-                      },
-                    ),
-                    FormBuilderTextField(
                       name: 'surname',
                       decoration: const InputDecoration(
                         labelText: 'Фамилия',
                       ),
                       onChanged: (value) {
                         candidate.surname = value;
+                      },
+                    ),
+                    FormBuilderTextField(
+                      name: 'name',
+                      decoration: const InputDecoration(
+                        labelText: 'Имя',
+                      ),
+                      onChanged: (value) {
+                        candidate.name = value;
                       },
                     ),
                     FormBuilderTextField(
@@ -156,14 +156,17 @@ class FormPage extends StatelessWidget {
                       onTap: () {
                         try {
                           candidate.insertDate = DateTime.now().toString();
-                          print('---------------- DateTime.now --------------------');
+                          print(
+                              '---------------- DateTime.now --------------------');
                           print(candidate.insertDate);
                           candidateRepository.add(candidate);
-                          dialog(context, '', 'Заявка отправлена' , 'Ok');
-                        } catch(e) {
-                          print('---------------- Error candidateRepository.add(candidate) --------------------');
+                          dialog(context, '', 'Заявка отправлена', 'Ok');
+                        } catch (e) {
+                          print(
+                              '---------------- Error candidateRepository.add(candidate) --------------------');
                           print(e);
-                          dialog(context, 'Ошибка', 'Не удалось подать заявку' , 'Ok');
+                          dialog(context, 'Ошибка', 'Не удалось подать заявку',
+                              'Ok');
                         }
                       },
                       child: Container(
@@ -176,12 +179,13 @@ class FormPage extends StatelessWidget {
                           color: AppPallete.blue,
                         ),
                         child: Center(
-                            child: Text(
-                          'Подать заявку',
-                          style: TextStyle(
-                              fontSize: mediaQuery.size.width / 45,
-                              color: Colors.white),
-                        )),
+                          child: Text(
+                            'Подать заявку',
+                            style: TextStyle(
+                                fontSize: mediaQuery.size.width / 45,
+                                color: Colors.white),
+                          ),
+                        ),
                       ),
                     ),
                   ],
