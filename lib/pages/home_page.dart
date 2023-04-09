@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
+import 'package:science_art_space/pages/test_page.dart';
 import '../app/theme/app_pallete.dart';
 import '../widgets/header_widget.dart';
 import '../widgets/timer_widget.dart';
@@ -186,11 +187,11 @@ class _HomePageState extends State<HomePage> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            //Navigator.push(
-                            //  context,
-                            //  MaterialPageRoute(
-                            //      builder: (context) => const AdminPage()),
-                            //);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const TestPage()),
+                            );
                           },
                           child: Text(
                             ' ©',

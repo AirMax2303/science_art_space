@@ -19,12 +19,12 @@ class UserRepository {
 
 class CandidateRepository {
 
-  Future<List<User>> getList() async {
-    String url = 'http://science-art.pro/test01.php';
+  Future<List<Candidate>> getList() async {
+    String url = 'http://science-art.pro/test07.php';
     Response response = await get(Uri.parse(url));
     if (response.statusCode == 200) {
       final List result = jsonDecode(response.body);
-      return result.map((e) => User.fromJson(e)).toList();
+      return result.map((e) => Candidate.fromJson(e)).toList();
     } else {
       throw Exception(response.reasonPhrase);
     }
