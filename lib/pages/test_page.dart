@@ -1,15 +1,8 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:science_art_space/pages/home/home_page.dart';
-import 'package:science_art_space/pages/partners_page.dart';
-import 'package:science_art_space/pages/statute_page.dart';
 import '../app/theme/app_pallete.dart';
 import '../model/candidate_model.dart';
-import '../repo/repositories.dart';
-import 'experts_page.dart';
-import 'organizers_page.dart';
 import 'package:file_picker/file_picker.dart';
 
 class TestPage extends StatefulWidget {

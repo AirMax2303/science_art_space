@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
-    //   _controller.dispose();
+    _controller.dispose();
     super.dispose();
   }
 
@@ -49,22 +49,14 @@ class _HomePageState extends State<HomePage> {
           builder: (context, constraints) => SingleChildScrollView(
                 child: Column(
                   children: [
-                    //Container(height: 900,width: MediaQuery.of(context).size.width, child: VideoPlayer(_controller)),
-                    //Text('${constraints.maxHeight} | ${constraints.maxWidth}'),
                     Center(
                       child: SizedBox(
                           height: constraints.maxWidth / 2.087,
                           width: constraints.maxWidth,
                           child: VideoPlayer(_controller)),
                     ),
-                    //const SizedBox(height: 10),
-                    //Text('${constraints.maxHeight} | ${constraints.maxWidth}'),
-                    //TextButton(
-                    //    onPressed: () async {
-                    //      final FilePickerResult? result =
-                    //          await FilePicker.platform.pickFiles();
-                    //    },
-                    //    child: const Text('File')),
+                    const SizedBox(height: 10),
+
                     SizedBox(height: mediaQuery.size.width / 25),
                     const HeaderWidget(),
                     SizedBox(height: mediaQuery.size.width / 15),
