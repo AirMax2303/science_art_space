@@ -151,6 +151,15 @@ class FormPage extends StatelessWidget {
                         candidate.phoneNumber = value;
                       },
                     ),
+                    FormBuilderTextField(
+                      name: 'description',
+                      decoration: const InputDecoration(
+                        labelText: 'Название работы',
+                      ),
+                      onChanged: (value) {
+                        candidate.description = value;
+                      },
+                    ),
                     SizedBox(height: mediaQuery.size.width / 15),
                     InkWell(
                       onTap: () {
